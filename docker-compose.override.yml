@@ -1,0 +1,5 @@
+services:
+    nodejs:
+        volumes:
+            - ./build:/home/node/app/build
+        command: ./scripts/wait-for.sh db:27017 -- npx nodemon -w build build/index.js

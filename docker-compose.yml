@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+    nginx:
+        build:
+            context: .
+            dockerfile: .docker/nginx.dockerfile
+        depends_on:
+            - nodejs
+        ports:
+            - '80:80'
+        networks:
+            - journey-app
+    nodejs:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: node-journey
+        restart: unless-stopped
+        env_file: .env
+        environment:
+            - MONGO_USER=$MONGO_USER
+            - MONGO_PASSWORD=$MONGO_PASSWORD
+            - MONGO_HOST=$MONGO_HOST
+            - MONGO_PORT=$MONGO_PORT
+            - MONGO_DB=$MONGO_DB
+        ports:
+            - '8080'
+        networks:
+            - journey-app
+    db:
+        image: mongo:bionic
+        restart: unless-stopped
+        env_file: .env
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=$MONGO_USER
+            - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+        volumes:
+            - dbdata:/data/db
+        ports:
+            - '27200:27017'
+        networks:
+            - journey-app
+
+networks:
+    journey-app:
+        driver: bridge
+
+volumes:
+    dbdata:

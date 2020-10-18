@@ -1,0 +1,47 @@
+<h1 class="title">Journey-Einträge</h1>
+
+<div class="columns">
+  <div class="column">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>Datei</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#eachpage entries startIndex}}
+          <tr>
+            <td>{{index}}.</td>
+            <td><a href="/details/{{entry.id}}">{{entry.id}}</a></td>
+          </tr>
+        {{/eachpage}}
+      </tbody>
+    </table>
+  </div>
+  <div class="column">
+    <div id="entry-details card">
+      <div class="card-content entry-text">
+        Eintrag auswählen ...
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+  {{#if displayPrevLink}}
+    <a class="pagination-previous">Previous</a>
+  {{/if}}
+
+  {{#if displayNextLink}}
+    <a class="pagination-next">Next page</a>
+  {{/if}}
+
+  <ul class="pagination-list">
+    {{#each pages}}
+      <li>
+        <a href="/?page={{this}}" class="pagination-link {{#if (same this activePage)}}is-current{{/if}}" aria-label="Goto page {{this}}">{{this}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</nav>

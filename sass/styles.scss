@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+// google font imports
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// custom colors
+$blue: #211e29;
+$link-blue: #505572;
+$light-grey: #f8f8f8;
+
+// global updates
+$family-sans-serif: 'Nunito', sans-serif;
+$grey-dark: #6d6d6d;
+$grey-light: #ccc;
+$primary: $blue;
+$link: $link-blue;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// component variable updates
+$body-background-color: $light-grey;
+
+// bulma imports
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
+@import '../node_modules/bulma/sass/grid/_all.sass';
+@import '../node_modules/bulma/sass/elements/button.sass';
+@import '../node_modules/bulma/sass/elements/container.sass';
+@import '../node_modules/bulma/sass/elements/title.sass';
+@import '../node_modules/bulma/sass/elements/table.sass';
+@import '../node_modules//bulma/sass/components/pagination.sass';
+@import '../node_modules//bulma/sass/components/card.sass';
