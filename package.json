@@ -7,8 +7,9 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "css-build": "node-sass --omit-source-map-url --output-style=compressed sass/styles.scss src/public/css/styles.css",
         "public-build": "mkdir -p build/public && cp -R src/public/* build/public",
-        "build": "rimraf ./build && npm run css-build && npx tsc && npm run public-build",
+        "build": "rimraf ./build/* && npm run css-build && npx tsc && npm run public-build",
         "start": "npm run build && node build/index.js",
+        "dev": " npm run build && npx nodemon -w build build/index.js",
         "lint": "eslint . --ext .ts",
         "watch": "npx tsc -w"
     },

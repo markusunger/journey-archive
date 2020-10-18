@@ -11,7 +11,6 @@ apiRouter.use('/', authMiddleware);
 */
 
 apiRouter.get('/details/:id', async (req, res) => {
-    const entry = await Journey.findOne({ id: req.params.id });
-
+    const entry = await Journey.findById(req.params.id).exec();
     res.json({ entry });
 });

@@ -1,10 +1,10 @@
 import { IJourney } from '../models/journey';
 
 export const handlebarHelpers = {
-    eachpage: (array: IJourney[], startIndex: number, options: any): string => {
+    eachindex: (array: IJourney[], options: any): string => {
         let result = '';
         array.forEach((entry, idx) => {
-            result += options.fn({ entry, index: startIndex + idx });
+            result += options.fn({ entry, index: idx + 1 });
         });
         return result;
     },

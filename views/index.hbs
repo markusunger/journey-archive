@@ -1,7 +1,7 @@
 <h1 class="title">Journey-Einträge</h1>
 
 <div class="columns">
-  <div class="column">
+  <div class="column scroll-container">
     <table class="table">
       <thead>
         <tr>
@@ -10,38 +10,27 @@
         </tr>
       </thead>
       <tbody>
-        {{#eachpage entries startIndex}}
+        {{#eachindex entries}}
           <tr>
             <td>{{index}}.</td>
-            <td><a href="/details/{{entry.id}}">{{entry.id}}</a></td>
+            <td><a href="#" class="entry-link" data-id="{{entry._id}}">{{entry.id}}</a></td>
           </tr>
-        {{/eachpage}}
+        {{/eachindex}}
       </tbody>
     </table>
   </div>
   <div class="column">
     <div id="entry-details card">
-      <div class="card-content entry-text">
+      <div class="level">
+        <div class="level-left" id="entry-date"></div>
+        <div class="level-right" id="entry-place"></div>
+      </div>
+      <div class="card-content" id="entry-text">
         Eintrag auswählen ...
       </div>
+      <div id="entry-tags"></div>
     </div>
   </div>
 </div>
 
-<nav class="pagination" role="navigation" aria-label="pagination">
-  {{#if displayPrevLink}}
-    <a class="pagination-previous">Previous</a>
-  {{/if}}
-
-  {{#if displayNextLink}}
-    <a class="pagination-next">Next page</a>
-  {{/if}}
-
-  <ul class="pagination-list">
-    {{#each pages}}
-      <li>
-        <a href="/?page={{this}}" class="pagination-link {{#if (same this activePage)}}is-current{{/if}}" aria-label="Goto page {{this}}">{{this}}</a>
-      </li>
-    {{/each}}
-  </ul>
-</nav>
+ <script src="/js/index.js"></script>
