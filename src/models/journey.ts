@@ -6,7 +6,7 @@ export type IJourney = JourneyFile & Document;
 const journeySchema = new Schema({
     text: String,
     type: String,
-    date_mofified: Number,
+    date_modified: Number,
     date_journal: Number,
     id: String,
     preview_text: String,

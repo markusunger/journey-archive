@@ -2,3 +2,17 @@
     max-height: 90vh;
     overflow-y: scroll;
 }
+
+.entry-header {
+    padding: 1rem;
+    width: '100%';
+    display: 'flex';
+    justify-content: 'space-between';
+}
+
+.tags {
+    margin-top: 1rem;
+    width: '100%';
+    display: 'flex';
+    justify-content: 'flex-end';
+}

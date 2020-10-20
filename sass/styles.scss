@@ -1,24 +1,41 @@
 @charset "utf-8";
 
 // google font imports
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:wght@400;700&display=swap');
 
-// custom colors
-$blue: #211e29;
-$link-blue: #505572;
-$light-grey: #f8f8f8;
+$family-sans-serif: 'Source Sans Pro', sans-serif;
 
-// global updates
-$family-sans-serif: 'Nunito', sans-serif;
-$grey-dark: #6d6d6d;
-$grey-light: #ccc;
-$primary: $blue;
-$link: $link-blue;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+$dark-grey: #26222b;
+$white: #e0dedd;
+$washed-blue: #649199;
+$ocean-blue: #234c67;
+$dark-brown: #2d2c2c;
 
-// component variable updates
-$body-background-color: $light-grey;
+$green: #3a7932;
+$yellow: #a3995e;
+$red: #8d3d3d;
+
+$primary: $washed-blue;
+$link: $washed-blue;
+$info: $ocean-blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$dark: $dark-grey;
+$text: $dark-brown;
+
+$size-small: 1.25rem;
+$size-normal: 1.5rem;
+$size-medium: 2rem;
+$size-large: 3rem;
+
+// customized components and elements
+$card-background-color: #f8f7f7;
+$card-content-background-color: #f8f7f7;
+$card-footer-background-color: #f8f7f7;
+$card-header-padding: 1.5rem;
+$card-content-padding: 1.5rem;
+$card-footer-padding: 1.5rem;
 
 // bulma imports
 @import '../node_modules/bulma/sass/utilities/_all.sass';
@@ -29,6 +46,4 @@ $body-background-color: $light-grey;
 @import '../node_modules/bulma/sass/elements/title.sass';
 @import '../node_modules/bulma/sass/elements/table.sass';
 @import '../node_modules/bulma/sass/elements/tag.sass';
-@import '../node_modules//bulma/sass/components/pagination.sass';
-@import '../node_modules//bulma/sass/components/card.sass';
-@import '../node_modules/bulma/sass/components/level.sass';
+@import '../node_modules/bulma/sass/components/card.sass';

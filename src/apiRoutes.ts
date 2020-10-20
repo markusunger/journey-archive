@@ -7,8 +7,17 @@ export const apiRouter = Router();
 apiRouter.use('/', authMiddleware);
 
 /*
-  ENTRY DETAILS
+ API ROUTES
 */
+
+apiRouter.get('/entries', async (req, res) => {
+    const entries = await Journey.find({}).exec();
+    try {
+        res.status(200).json({ entries });
+    } catch (error) {
+        res.status(500).json({ error });
+    }
+});
 
 apiRouter.get('/details/:id', async (req, res) => {
     const entry = await Journey.findById(req.params.id).exec();

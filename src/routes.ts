@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { authMiddleware } from './lib/authMiddleware';
-import Journey from './models/journey';
 
 export const router = Router();
 
@@ -9,8 +8,7 @@ export const router = Router();
 */
 
 router.get('/', authMiddleware, async (req, res) => {
-    const entries = await Journey.find({}).exec();
-    res.render('index', { entries });
+    res.render('index');
 });
 
 /*

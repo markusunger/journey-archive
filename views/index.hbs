@@ -1,36 +1,15 @@
 <h1 class="title">Journey-Einträge</h1>
 
+<div id="app">
+
 <div class="columns">
-  <div class="column scroll-container">
-    <table class="table">
-      <thead>
-        <tr>
-          <td>#</td>
-          <td>Datei</td>
-        </tr>
-      </thead>
-      <tbody>
-        {{#eachindex entries}}
-          <tr>
-            <td>{{index}}.</td>
-            <td><a href="#" class="entry-link" data-id="{{entry._id}}">{{entry.id}}</a></td>
-          </tr>
-        {{/eachindex}}
-      </tbody>
-    </table>
-  </div>
+ 
   <div class="column">
-    <div id="entry-details card">
-      <div class="level">
-        <div class="level-left" id="entry-date"></div>
-        <div class="level-right" id="entry-place"></div>
-      </div>
-      <div class="card-content" id="entry-text">
-        Eintrag auswählen ...
-      </div>
-      <div id="entry-tags"></div>
+    <div class="card" id="entry-details">
     </div>
   </div>
 </div>
 
- <script src="/js/index.js"></script>
+</div>
+
+<script type="module" src="/js/index.js"></script>
