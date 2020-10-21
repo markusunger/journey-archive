@@ -5,6 +5,10 @@ RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
+# copy all journey asset files
+RUN mkdir -p assets
+COPY --chown=node:node assets/*.* ./assets/
+
 COPY --chown=node:node package*.json ./
 
 USER node

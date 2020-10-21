@@ -5,9 +5,15 @@
 
 .entry-header {
     padding: 1rem;
-    width: '100%';
-    display: 'flex';
-    justify-content: 'space-between';
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.entry-header > div {
+    flex-shrink: 1;
+    vertical-align: bottom;
 }
 
 .tags {
@@ -15,4 +21,29 @@
     width: '100%';
     display: 'flex';
     justify-content: 'flex-end';
+}
+
+.sort-column:hover {
+    cursor: pointer;
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+}
+
+.thumbnail {
+    margin: 2rem;
+}
+
+.link-row:hover {
+    cursor: pointer;
+}
+
+.link-cursor:hover {
+    cursor: pointer;
 }
