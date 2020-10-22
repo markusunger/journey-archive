@@ -4,3 +4,4 @@ services:
     nginx:
         volumes:
             - /etc/letsencrypt/live:/etc/letsencrypt/live
+            - /etc/ssl/:/etc/ssl
