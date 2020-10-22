@@ -8,6 +8,9 @@ services:
         restart: always
         depends_on:
             - nodejs
+        volumes:
+            - /etc/letsencrypt/live:/etc/letsencrypt/live
+            - /etc/ssl/:/etc/ssl
         ports:
             - '80:80'
             - '443:443'
