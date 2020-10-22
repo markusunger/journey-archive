@@ -1,11 +1,20 @@
-- name: deployment
-  uses: appleboy/ssh-action@master
-  with:
-      host: 116.203.248.146
-      username: root
-      port: 22
-      privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
-      script: |
-          cd journey-archive/
-          git pull
-          docker-compose up -f docker-compose.yml -f docker-compose.prod.yml --build
+name: Deployment
+
+on:
+    push:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: deployment
+              uses: appleboy/ssh-action@master
+              with:
+                  host: 116.203.248.146
+                  username: root
+                  port: 22
+                  privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+                  script: |
+                      cd journey-archive/
+                      git pull
+                      docker-compose up -f docker-compose.yml -f docker-compose.prod.yml --build
