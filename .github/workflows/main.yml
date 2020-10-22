@@ -13,7 +13,7 @@ jobs:
                   host: 116.203.248.146
                   username: root
                   port: 22
-                  privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
                   script: |
                       cd journey-archive/
                       git pull
