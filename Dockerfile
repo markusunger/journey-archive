@@ -1,7 +1,7 @@
 FROM node:latest
 
 # create folders and chown them to node user
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+RUN mkdir -p /home/node/app/node_modules && mkdir -p /home/node/app/build && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
