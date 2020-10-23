@@ -2,6 +2,8 @@ services:
     nodejs:
         command: ./scripts/wait-for.sh db:27017 -- npx nodemon build/index.js
     nginx:
+        build:
+            dockerfile: .docker/nginx.dockerfile
         volumes:
             - /etc/letsencrypt/live:/etc/letsencrypt/live
             - /etc/ssl/:/etc/ssl

@@ -1,4 +1,7 @@
 services:
+    nginx:
+        build:
+            dockerfile: .docker/nginx.dev.dockerfile
     nodejs:
         volumes:
             - ./build:/home/node/app/build

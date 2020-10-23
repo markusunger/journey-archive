@@ -4,7 +4,6 @@ services:
     nginx:
         build:
             context: .
-            dockerfile: .docker/nginx.dockerfile
         restart: always
         depends_on:
             - nodejs
