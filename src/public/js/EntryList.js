@@ -2,8 +2,6 @@ import { html } from './preact.js';
 import { sort } from './Application.js';
 
 export default function EntryList({ entries, selectedEntry, onEntryLinkClick, onSortClick, sortBy }) {
-    console.log(entries);
-
     if (!entries)
         return html`
             <div class="column">
