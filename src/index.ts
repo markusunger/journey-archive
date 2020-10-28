@@ -13,8 +13,9 @@ app.disable('x-powered-by');
 
 app.set('trust proxy', 1);
 
+app.use(express.urlencoded());
 app.use(express.json());
-app.use('/', apiRouter);
+app.use('/api', apiRouter);
 
 app.listen(process.env.NODE_PORT, async () => {
     await buildDbFromAssets();

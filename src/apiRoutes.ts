@@ -14,7 +14,6 @@ apiRouter.use(cookieParser());
 
 apiRouter.post('/login', (req, res) => {
     const { password } = req.body;
-    console.log(req.body);
     if (password && bcrypt.compareSync(password, process.env.LOGIN_PASSWORD as string)) {
         res.cookie('jauth', process.env.COOKIE_SECRET, {
             maxAge: 1000 * 60 * 60 * 6, // 6 hours valid
