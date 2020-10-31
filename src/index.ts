@@ -1,4 +1,6 @@
 import express from 'express';
+import session from 'express-session';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import { disconnect } from 'mongoose';
 import { buildDbFromAssets } from './scripts/buildDbFromAssets';
@@ -12,6 +14,25 @@ const app = express();
 app.disable('x-powered-by');
 
 app.set('trust proxy', 1);
+
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            secure: 'auto'
+        }
+    })
+);
+
+app.use(
+    cors({
+        origin: [/localhost:3000/, /unger\.dev$/],
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization']
+    })
+);
 
 app.use(express.urlencoded());
 app.use(express.json());

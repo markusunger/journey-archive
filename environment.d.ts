@@ -8,7 +8,7 @@ declare global {
             MONGO_DB: string;
             MONGO_USER: string;
             MONGO_PASSWORD: string;
-            COOKIE_SECRET: string;
+            SESSION_SECRET: string;
             LOGIN_PASSWORD: string;
         }
     }

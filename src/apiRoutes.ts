@@ -14,12 +14,8 @@ apiRouter.use(cookieParser());
 
 apiRouter.post('/login', (req, res) => {
     const { password } = req.body;
-    if (password && bcrypt.compareSync(password, process.env.LOGIN_PASSWORD as string)) {
-        res.cookie('jauth', process.env.COOKIE_SECRET, {
-            maxAge: 1000 * 60 * 60 * 6, // 6 hours valid
-            httpOnly: true,
-            sameSite: 'strict'
-        });
+    if (req.session && password && bcrypt.compareSync(password, process.env.LOGIN_PASSWORD as string)) {
+        req.session.auth = true;
         res.status(200).json({ login: true });
     } else {
         res.status(401).json({ error: 'Wrong password' });
