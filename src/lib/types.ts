@@ -29,4 +29,5 @@ export interface JourneyFile {
     weather: EntryWeather;
     photos: string[];
     tags: string[];
+    updateFromAuthor: string;
 }
