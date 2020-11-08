@@ -29,7 +29,8 @@ const journeySchema = new Schema({
         place: String
     },
     photos: [String],
-    tags: [String]
+    tags: [String],
+    updateFromAuthor: String
 });
 
 export default model<IJourney>('Journey', journeySchema);
